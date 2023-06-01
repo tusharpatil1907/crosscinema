@@ -17,13 +17,13 @@ include 'db.php';
     <div class="col-7">
       <input type="text" name="catname" class="form-control" placeholder="Category Name">
     </div>
-   
+   <!-- m -->
  <div class="col">
-      <input type="text" name="catid" class="form-control" placeholder="Category ID ">
+      <input type="text" name="catid" required class="form-control" placeholder="Category ID ">
     </div>
-     <div class="col">
+     <!-- <div class="col">
       <input type="text" name="genid" class="form-control" placeholder="Genre ID ">
-    </div>
+    </div> -->
   </div>
   <br><br>
   <button class="btn btn-primary btn-lg" name="submit">Add category</button>
@@ -34,13 +34,15 @@ include 'db.php';
  <?php 
 
  if (isset($_POST['submit'])) {
- 	$catname = $_POST['catname'];
- 	$catid = $_POST['catid'];
-  $genre = $_POST['genid'];
-
- 	$query = "INSERT INTO `category`(`category_id`, `category_name`, `genre_id`) VALUES ($catid,'$catname',$genre)";
   
- 	// $query = "INSERT INTO `category`(`category_id`, `category_name`) VALUES ($catid,'$catname')";
+   $catname = $_POST['catname'];
+ 	$catid = $_POST['catid'];
+   // mod
+  // $genre = $_POST['genid'];
+
+ 	// $query = "INSERT INTO `category`(`category_id`, `category_name`,) VALUES ('$catid','$catname')";
+  
+ 	$query = "INSERT INTO `category`(`category_id`, `category_name`) VALUES ($catid,'$catname')";
  	$run = mysqli_query($con,$query);
  	if ($run) {
  		echo "<script>alert('Category Successfully Added.. :)');window.location.href='categorylist.php';</script>";

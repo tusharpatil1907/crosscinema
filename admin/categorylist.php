@@ -77,7 +77,7 @@ if ($run) {
 
       <td>
       	<a href="deletecategory.php?deleteid=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a>
-       <!-- <a class="btn btn-outline-secondary" href="editcategory.php?id=<?php// echo $row['id']; ?>&forkey=<?php //echo$row['category_id']; ?>&catname=<?php //echo$row['category_name']; ?>">Edit</a></td> -->
+       <!-- <a class="btn btn-outline-secondary" href="editcategory.php?id=<?php // echo $row['id']; ?>&forkey=<?php //echo$row['category_id']; ?>&catname=<?php //echo$row['category_name']; ?>">Edit</a></td> -->
        <td><a href="viewpost.php?id=<?php echo$row['id'] ?>" class="btn btn-outline-info">View Posts</a></td>
 
     </tr>

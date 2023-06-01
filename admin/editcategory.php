@@ -17,14 +17,16 @@ for example  editcategory.php?id=1&forkey=1&catname=Action  without this type of
         // to print in input bax
         $id= $_GET['id'];
         $catname= $_GET['catname'];
-        $fk= $_GET['forkey'];
+        $fk= $_GET['category_id'];
 
         if(isset($_POST['submit'])){
+            // echo $catname;
             $cname=$_POST['category_name'];
             $frky=$_POST['frky'];
-            $pid=$_POST['pid'];
+            // $pid=$_POST['pid'];
 
-            $query="UPDATE `category` SET `id`=$pid,`category_id`=$frky,`category_name`='$cname' WHERE 'id'=$id";
+            $query="UPDATE `category` SET `category_id`=$frky,`category_name`='$cname' WHERE 'id'=$id";
+            // $query="UPDATE `category` SET `id`=$pid,`category_id`=$frky,`category_name`='$cname' WHERE 'id'=$id";
             $run=mysqli_query($con,$query);
 
             if($run){
@@ -58,10 +60,10 @@ for example  editcategory.php?id=1&forkey=1&catname=Action  without this type of
             <small>foregin key</small>
                 <input type="text" name="frky" class="form-control" value="<?php echo $fk?>" placeholder="foregin key">
             </div>
-            <div class="col">
+            <!-- <div class="col">
             <small>Primary ID</small>
-                <input type="text" name="pid" class="form-control" value="<?php echo $id;?>" placeholder="Primary ID">
-            </div>
+                <input type="text" name="pid" class="form-control" value="<?php //echo $id;?>" placeholder="Primary ID">
+            </div> -->
         </div>
         <br><br>
             <input type="submit" class="btn btn-outline-success btn-lg">
