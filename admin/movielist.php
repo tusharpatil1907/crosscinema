@@ -46,7 +46,7 @@ if ($run) {
   <div class="col-md-3">
 
     <div class="card shadow p-3 mb-5 bg-white rounded " >
-    	<p><?php echo $row['mv_id']; ?></p>
+    	<p>Movie ID: <?php echo $row['mv_id']; ?></p>
    <?php  //imp
     echo "<img height='300px'vwidth='300px' src='../thumb/".$row['img']."'>";
      ?>
@@ -61,7 +61,7 @@ if ($run) {
           <!-- <br> -->
           
           <a href="deletemovie.php?id=<?php echo$row['mv_id'] ?>" class="btn btn-danger btn-sm">DELETE</a>
-          <a href="editmovie.php?id=<?php echo$row['mv_id'] ?>" class="btn btn-info  btn-sm">Edit</a>
+          <!-- <a href="editmovie.php?id=<?php //echo$row['mv_id'] ?>" class="btn btn-info  btn-sm">Edit</a> -->
         </div>
 </div>
 

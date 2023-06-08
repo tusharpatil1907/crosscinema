@@ -40,7 +40,7 @@ include 'db.php';
       <th scope="col">Category Name</th>
       <th scope="col">No. of Post</th>
       <th scope="col">CURD</th>
-      <th scope="col">View Post</th>
+      <!-- <th scope="col">View Post</th> -->
 
 
     </tr>

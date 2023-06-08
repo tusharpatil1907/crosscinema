@@ -47,10 +47,12 @@ include 'ft.php';
    
     <input type="text" name="genre_id" class="form-control" placeholder="Enter Genre ID" >
   </div>
+    <LAbel>ADD THUMBNAIL</LAbel>
    <div class="custom-file">
     <input type="file" name="img" class="custom-file-input" id="customFile">
     <label class="custom-file-label" for="customFile">Choose file</label>
   </div>
+  <LAbel>ADD MOVIE IN VIDEO FORM</LAbel>
   <div class="custom-file">
     <input type="file" name="vid" class="custom-file-input" id="customFile">
     <label class="custom-file-label" for="customFile">Choose file</label>

@@ -33,7 +33,7 @@ if (isset($_SESSION['loginsuccesfull'])) {}
       <div class="col " >
         <div class="col " >
 
-         <img src="img/logo.png" class="col w-25"  alt="">
+         <img src="img/LOGO.jpeg" class="col w-25"  alt="">
           <a class="navbar-brand nav-sm " href="#">Hello, <?php echo $_SESSION['user']; ?> 
           </a>
         </div>

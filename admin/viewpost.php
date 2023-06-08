@@ -70,10 +70,10 @@ if ($run2) {
         <p class="card-text"><?php echo $row2['meta_description']; ?></p>
         <div class="">
 
-          <a href="viewmovie.php?id=<?php echo$row2['id']; ?>" class="btn btn-secondary ">View Details</a>
+          <a href="viewmovie.php?id=<?php echo$row2['mv_id']; ?>" class="btn btn-secondary ">View Details</a>
           
-          <a href="deletemovie.php?id=<?php echo$row2['id'] ?>" class="btn btn-danger">DELETE</a>
-          <a href="editmovie.php?id=<?php echo$row2['id'] ?>" class="btn btn-info ">Edit</a>
+          <a href="deletemovie.php?id=<?php echo$row2['mv_id'] ?>" class="btn btn-danger">DELETE</a>
+          <a href="editmovie.php?id=<?php echo$row2['mv_id'] ?>" class="btn btn-info ">Edit</a>
         </div>
       </div>
 

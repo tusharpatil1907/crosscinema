@@ -1,118 +1,146 @@
-<?php 
+<?php
 
 include 'header.php';
 include 'ft.php';
 
- ?>
+?>
 <style>
- html{
- 	scroll-behavior:smooth ;
- }
-#btn1{
-	padding: 10px 20px;
-	background-color:#726297;
-	border: 1px solid #726297;
-	text-decoration: none;
-	color:#fff;
-}
-#btn2{
-	padding: 10px 20px;
-	background-color: none;
+	html {
+		scroll-behavior: smooth;
+	}
 
-	text-decoration: none;
-	color:  #726297;
-}
-#btn1:hover{
-	background-color:#fff;
-	color: #726297;
-	border-radius: 10px;
-	
-}
-#btn2:hover{
-	background-color:#726297;
-	color: #fff;
-	border-radius: 10px;
+	.img {
+		/* max-height: 30rem;
+		max-width: 10rem; */
+		display: flex;
+		justify-content: center;
+	}
 
-	
-}
+	video {
+		border: 4px solid black
+	}
 </style>
 
- <?php 
+<?php
 
 if (isset($_GET['id'])) {
 	$id = $_GET['id'];
 	foreach ($_GET as $key => $id) {
 		// code...
-	
-	$dec = $_GET[$key] = base64_decode(urldecode($id));
-	$uncal = ((($dec*956783)/54321)/123456789);
-	
-	$query = "SELECT * FROM movie where mv_id=$uncal";
-	$run = mysqli_query($con,$query);
-	if ($run) {
-		while($row = mysqli_fetch_assoc($run)){
-			?>
-  <meta charset="UTF-8">
-  <meta name="description" content="<?php echo$row['meta_description']; ?>" >
-  <meta name="keywords" content="<?php echo$row['mv_tag']; ?>" >
-  <meta name="author" >
-			<div class="container text-center">
-				<div class="">
-					<h1>Download <b><?php echo$row['mv_name'] ?></h1></b>
-				</div>
-				<div class="img">
-					<img src="thumb/<?php echo$row['img']; ?>" height='400px' width='300px' style="max-width: 100%;">
-				</div>
-				<br>
-				<div id='but'>
-				<a href="#download" onclick="myfun()" class="btn btn-" style="background-color: #726297; color: #fff;">Download</a>
-				<!-- <a id="" href=""?>"class="btn btn" style="background-color: #726297; color: #fff;">Stream link</a> -->
-                
 
-			</div>
-           
-				<div class="container">
-					<h2><?php echo$row['mv_name']; ?></h2>
-					<p>Movie Language:- <b><i><?php echo$row['lang'] ?></i></b></p>
-					<p>Directed By <b><i><?php echo$row['director']; ?></b></i></p>
-					<p>Release Date :- <b><i><?php echo$row['date']; ?></i></b></p>
-					<div class="jumbotron">
-						<p><?php echo $row['mv_des']; ?></p>
-					</div>
-					<!-- stream video tag -->
+		$dec = $_GET[$key] = base64_decode(urldecode($id));
+		$uncal = ((($dec * 956783) / 54321) / 123456789);
+
+		$query = "SELECT * FROM movie where mv_id=$uncal";
+		$run = mysqli_query($con, $query);
+		if ($run) {
+			while ($row = mysqli_fetch_assoc($run)) {
+				?>
+				<meta charset="UTF-8">
+				<meta name="description" content="<?php echo $row['meta_description']; ?>">
+				<meta name="keywords" content="<?php echo $row['mv_tag']; ?>">
+				<meta name="author">
+				<body>
+					
+	
 					<div class="container">
-						<h1>stream here.</h1>
-						<video controls src="movie/<?php echo $row['vid']  ?>"></video>
+						
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="px-5 h5">
+									<h1>Download <b>
+										<?php echo $row['mv_name'] ?>
+									</b></h1>
+									<p class="py-2">
+										<b>Meta Description:</b>
+										<?php echo $row['meta_description']; ?>
+									</p>
+									<div>
+										<pre class=""><b>Uploaded on: </b><?php echo $row['date']; ?></pre>
+										<p class=""><span style="font-size: medium; font-weight: bolder;">Directed by: </span>
+										<?php echo $row['director']; ?>
+									</p>
+									<p class=""><span style="font-size: medium; font-weight: bolder;">Language type:</span>
+									<?php echo $row['lang']; ?>
+								</p>
+								<p class="my-5">
+									<B>Description : </B>
+									<?php echo $row['mv_des']; ?>
+								</p>
+								<div class="down_btn1">
+									<button onclick="myfun()">download</button>
+									<button onclick="vid()">Stream</button>
+								</div>
+								<div id="download" style="display:none; color:" >
+									
+								<!-- <a id="btn btn-" href="<?php echo $row['link1']; ?>">server1</a> -->
+								<!-- <a id="btn btn-secondary" href="<?php echo $row['link2']; ?>">server2 </a> -->
+								<a id="btn btn-secondary" href="movie/<?php echo $row['vid'] ?>" download>download now</a>
+								
+								
+							</div>
+						</div>
 					</div>
 				</div>
-
-<div id="download" style="display:none;">
-
-<a id="btn1" href="<?php echo$row['link2']; ?>">server1</a>
-<a id="btn2" href="<?php echo$row['link2']; ?>">server2 </a>
-
-
-	</div>
-
-
+				
+				<div class="col-sm-6 img my-4">
+					<img height="400" width="400" src="thumb/<?php echo $row['img'] ?>" alt="">
+				</div>
 			</div>
-<script>
+			<div id="vid" style="display:none;" >
+				
+			<div class="row d-flex justify-content-center my-5">
+				<h1>Stream movie online: </h1>
+			</div>
+			<div class="row d-flex justify-content-center ">
+				<div class="justify-content-center " >
+					<video width="500" height="300" class="" controls src="movie/<?php echo $row['vid'] ?>"><video>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			<script>
+				
+				function myfun() {
+					const btn=document.getElementById('download')
 
-function myfun(show,hide) {
-	document.getElementById('download').style.display='block';
-	document.getElementById('but').style.display='none';
-}
+					if(btn.style.display == 'none'){
+						btn.style.display='block';
+					}
+					else{
+						btn.style.display='none';
+					}
+				}
+					// document.getElementById('but').style.display = 'none';
+				function vid() {
+					const btn2 = document.getElementById('vid')
+					if(btn2.style.display == 'none'){
+						btn2.style.display='block';
+					}
+					else{
+						btn2.style.display='none';
+					}
+					// document.getElementById('but').style.display = 'none';
+				}
+				
 
-
-</script>
-			<?php
+				</script>
+			</body>
+				<?php
+			}
 		}
 	}
-}
-}
-else{
+} else {
 	echo "<script>window.location.href='index.php';</script>";
 }
 
-  ?>
-  
+?>

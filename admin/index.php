@@ -246,9 +246,14 @@ if ($run3) {
 <!-- js hide and show -->
 
 <script type="text/javascript">
-  function first(show,hide) {
-    document.getElementById('show').style.display="block";
-    document.getElementById('hbtn').style.display="none";
+  function first() {
+    const a=document.getElementById('show');
+    if (a.style.display=="block"){
+      a.style.display="none";
+    }
+    else{
+      a.style.display="block";
+    }
   }
 	</script>
 	<script type="text/javascript">

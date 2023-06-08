@@ -13,7 +13,7 @@ include 'ft.php';
 
 				$dec1 = ((($data * 956783) / 54321) / 123456789);
 
-				$query = "SELECT * from movie , category where category.category_id=movie.cat_id and category.category_id=$dec1";
+				$query = "SELECT * from movie , category where category.id=movie.cat_id and category.id=$dec1";
 				$run = mysqli_query($con, $query);
 				if (mysqli_num_rows($run) > 0) {
 					while ($row = mysqli_fetch_assoc($run)) {
@@ -43,7 +43,7 @@ include 'ft.php';
 
 // changes
 									$id = $row['mv_id'];
-									echo $id;
+									// echo $id;
 									// $cal = (($id * 123456789 * 54321) / 956783);
 									$cal = (($id * 123456789 * 54321) / 956783);
 									$url = "download.php?id=" . urlencode(base64_encode($cal));
