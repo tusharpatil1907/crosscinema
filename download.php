@@ -73,9 +73,9 @@ if (isset($_GET['id'])) {
 								</div>
 								<div id="download" style="display:none; color:" >
 									
-								<!-- <a id="btn btn-" href="<?php echo $row['link1']; ?>">server1</a> -->
-								<!-- <a id="btn btn-secondary" href="<?php echo $row['link2']; ?>">server2 </a> -->
-								<a id="btn btn-secondary" href="movie/<?php echo $row['vid'] ?>" download>download now</a>
+								<a id="btn btn-" href="<?php echo $row['link1']; ?>">server1</a>
+								<a id="btn btn-secondary" href="<?php echo $row['link2']; ?>">server2 </a>
+								<a id="btn btn-secondary" href="movie/<?php echo $row['vid'] ?>" download>download now (localhost)</a>
 								
 								
 							</div>

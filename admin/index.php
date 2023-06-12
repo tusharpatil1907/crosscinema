@@ -114,6 +114,24 @@ if ($run) {
   }
 }
 ?></p>
+
+<script type="text/javascript">
+  function first() {
+    const a=document.getElementById('show');
+    if (a.style.display=="block"){
+      a.style.display="none";
+    }
+    else{
+      a.style.display="block";
+    }
+  }
+	</script>
+	<script type="text/javascript">
+    function myfun1(show,hide) {
+      document.getElementById('genshow').style.display="block";
+			document.getElementById('genbtn1').style.display="none";
+		}
+    </script>
         
       </div>
     </div>
@@ -198,13 +216,14 @@ if ($run3) {
         <?php 
       $id = $row3['id'];
       // count VARIABLE
-      $query4 = "SELECT count(*) as total_category from category,genre where genre.id=category.genre_id and genre.id=$id";
+      // $query4 = "SELECT count(*) as total_category from category,genre where genre.id=category.genre_id and genre.id=$id";
+      $query4 = "SELECT count(*) as total_category from genre where genre.id=$id";
       $run4 = mysqli_query($con,$query4);
       if ($run4) {
         while ($row4 = mysqli_fetch_assoc($run4)) {
           
           ?>
-        <p class="card-text">No of category "<?php echo $row4['total_category']; ?>"</p>
+        <!-- <p class="card-text">No of category "<?php echo $row4['total_category']; ?>"</p> -->
         
         <?php
                 }
@@ -245,22 +264,6 @@ if ($run3) {
 </div>
 <!-- js hide and show -->
 
-<script type="text/javascript">
-  function first() {
-    const a=document.getElementById('show');
-    if (a.style.display=="block"){
-      a.style.display="none";
-    }
-    else{
-      a.style.display="block";
-    }
-  }
-	</script>
-	<script type="text/javascript">
-    function myfun1(show,hide) {
-      document.getElementById('genshow').style.display="block";
-			document.getElementById('genbtn1').style.display="none";
-		}
-    </script>
+
 	<!-- h & s end -->
   
